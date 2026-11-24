@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VirTube</title>
+    <meta name="description" content="A clean video hub with a modern feed and watch experience." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Sidebar navigation">
+        <div class="brand">VirTube</div>
+
+        <a class="ad-slot ad-slot--top" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit YouTube (opens in a new tab)">
+          <img src="youtube-banner.png" alt="YouTube website" />
+        </a>
+
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-item is-active" data-page="home" aria-label="Home page">
+            <span class="nav-emoji" aria-hidden="true">🏠</span>
+            <span>Home</span>
+          </button>
+          <button class="nav-item" data-page="trending" aria-label="Trending page">
+            <span class="nav-emoji" aria-hidden="true">🔥</span>
+            <span>Trending</span>
+          </button>
+          <button class="nav-item" data-page="subscription" aria-label="Subscription page">
+            <span class="nav-emoji" aria-hidden="true">🔔</span>
+            <span>Subscription</span>
+          </button>
+          <button class="nav-item" data-page="liked" aria-label="Liked videos page">
+            <span class="nav-emoji" aria-hidden="true">💜</span>
+            <span>Liked</span>
+          </button>
+          <button class="nav-item" data-page="history" aria-label="Watch history page">
+            <span class="nav-emoji" aria-hidden="true">🕘</span>
+            <span>History</span>
+          </button>
+        </nav>
+
+        <section id="sidebarRecommendations" class="sidebar-recommendations" aria-label="Recommended videos" hidden>
+          <h2>Recommended</h2>
+          <div id="sidebarRecommendationList" class="sidebar-recommendation-list"></div>
+        </section>
+
+        <a class="ad-slot ad-slot--bottom" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit YouTube (opens in a new tab)">
+          <img src="youtube-banner.png" alt="YouTube website" />
+        </a>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="search" role="search">
+            <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <label class="visually-hidden" for="searchInput">Search videos</label>
+            <input type="text" id="searchInput" placeholder="Search videos, channels, categories…" />
+            <button class="search-clear" id="searchClear" type="button" aria-label="Clear search">&times;</button>
+          </div>
+
+          <div class="upload-control">
+            <input id="videoUpload" class="visually-hidden" type="file" accept="video/*" />
+            <button id="uploadButton" class="upload-button" type="button">Upload video</button>
+          </div>
+          <p id="uploadStatus" class="upload-status" role="status" aria-live="polite"></p>
+
+          <a class="ad-slot ad-slot--banner" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit YouTube (opens in a new tab)">
+            <img src="youtube-banner.png" alt="YouTube website" />
+          </a>
+        </header>
+
+        <div id="feed" class="feed" aria-live="polite"></div>
+        <div id="watch" class="watch-page" hidden aria-live="polite"></div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+ 
